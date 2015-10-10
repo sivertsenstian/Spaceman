@@ -1,0 +1,13 @@
+{
+  "name": "SS",
+  "version": "0.0.0",
+  "description": "SS",
+  "main": "app.js",
+  "author": {
+    "name": "ss",
+    "email": ""
+  },
+  "dependencies": {
+    "requirejs": "^2.1.20"
+  }
+}

@@ -1,13 +1,12 @@
-﻿//Init namespaces
-var Phaser = Phaser || {};
-var ss = ss || {};
-ss.platformer = ss.platformer || {};
-ss.platformer.gameobject = ss.platformer.gameobject || {};
+﻿define(['./base_entity'], function (BaseEntity) {
 
-(function () {
-  "use strict";
-  ss.platformer.gameobject.MovableEntity = function (game, x, y, key, frame, properties) {
-    ss.platformer.gameobject.Entity.call(this, game, x, y, key, frame, properties);
+  return function (game_state, x, y, key, frame, properties) {
+    BaseEntity.call(this, game, x, y, key, frame, properties);
+    this.game_state = game_state;
   }
-  .inherits(ss.platformer.gameobject.Entity);
-}());
+  .inherits(BaseEntity).
+  extend({
+
+  });
+
+});

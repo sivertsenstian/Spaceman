@@ -1,13 +1,7 @@
-﻿//Init namespaces
-var Phaser = Phaser || {};
-var ss = ss || {};
-ss.platformer = ss.platformer || {};
-ss.platformer.state = ss.platformer.state || {};
+﻿define(['SS/platformer/state/base_state'], function (BaseState) {
 
-(function () {
-  "use strict";
-  ss.platformer.state.LossState = function () { }
-  .inherits(ss.platformer.state.BaseState)
+  return function () { }
+  .inherits(BaseState)
   .extend({
     create: function () {
       this.diedtext = this.add.text(this.game.width / 2, this.game.height / 2, ":( YOU DIEDED!11", { font: "20px monospace", fill: "#fff" });
@@ -24,5 +18,6 @@ ss.platformer.state = ss.platformer.state || {};
     startGame: function () {
       this.game.state.restart(true, false);
     }
-  });
-}());
+  })
+
+});

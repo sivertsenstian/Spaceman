@@ -1,10 +1,5 @@
-﻿//Init namespaces
-var Phaser = Phaser || {};
-var ss = ss || {};
-ss.platformer = ss.platformer || {};
-ss.platformer.tiled = ss.platformer.tiled || {};
+﻿define(['Phaser', 'SS/utils/extend'], function (Phaser, extend) {
+  
+  return function () { };
 
-(function () {
-  "use strict";
-  ss.platformer.tiled.ObjectLoader = function () { };
-}());
+});

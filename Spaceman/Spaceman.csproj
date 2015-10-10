@@ -21,35 +21,44 @@
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="spaceman.css" />
-    <Content Include="spaceman.js" />
-    <Content Include="assets\backgrounds\background.jpg" />
+    <Content Include="assets\backgrounds\bg.png" />
+    <Content Include="assets\backgrounds\far.png" />
+    <Content Include="assets\backgrounds\middle.png" />
+    <Content Include="assets\images\enemy_fly.png" />
+    <Content Include="assets\images\enemy_slime.png" />
+    <Content Include="assets\images\enemy_snail.png" />
+    <Content Include="assets\vendor\phaser-debug.js" />
+    <Content Include="entities\friendly\spaceman.js" />
+    <Content Include="entities\hostile\fly.js" />
+    <Content Include="entities\hostile\snail.js" />
+    <Content Include="entities\hostile\slime.js" />
+    <Content Include="level\map_loader.js" />
+    <Content Include="app.css" />
+    <Content Include="app.js" />
     <Content Include="assets\mariospritesheet-small.png" />
     <Content Include="assets\phaser_splash.png" />
     <Content Include="assets\preloader-bar.png" />
-    <Content Include="assets\spritesheets\enemies.png" />
-    <Content Include="assets\spritesheets\hud.png" />
-    <Content Include="assets\spritesheets\items.png" />
-    <Content Include="assets\spritesheets\player_walk.png" />
-    <Content Include="assets\spritesheets\player.png" />
-    <Content Include="assets\spritesheets\tiles.png" />
+    <Content Include="assets\images\items.png" />
+    <Content Include="assets\images\player_walk.png" />
+    <Content Include="assets\images\player.png" />
+    <Content Include="assets\images\tiles.png" />
     <Content Include="index.html" />
     <Content Include="entities\entity_factory.js" />
     <Content Include="Gruntfile.js" />
-    <Content Include="SS\platformer\gameobject\entity.js" />
-    <Content Include="SS\platformer\gameobject\entity_factory.js" />
+    <Content Include="level\ParallaxBackground.js" />
+    <Content Include="SS\platformer\gameobject\base_entity.js" />
+    <Content Include="SS\platformer\factory.js" />
     <Content Include="SS\platformer\gameobject\movable_entity.js" />
     <Content Include="SS\platformer\gameobject\static_entity.js" />
     <Content Include="SS\platformer\state\base_state.js" />
-    <Content Include="SS\platformer\state\boot_state.js" />
-    <Content Include="SS\platformer\state\load_state.js" />
-    <Content Include="SS\platformer\state\loss_state.js" />
-    <Content Include="SS\platformer\state\menu_state.js" />
-    <Content Include="SS\platformer\state\play_state.js" />
-    <Content Include="SS\platformer\state\win_state.js" />
-    <Content Include="SS\platformer\tiled\entity_loader.js" />
-    <Content Include="SS\platformer\tiled\level_loader.js" />
     <Content Include="SS\platformer\tiled\object_loader.js" />
+    <Content Include="states\boot_state.js" />
+    <Content Include="states\load_state.js" />
+    <Content Include="states\loss_state.js" />
+    <Content Include="states\menu_state.js" />
+    <Content Include="states\play_state.js" />
+    <Content Include="states\win_state.js" />
+    <Content Include="SS\platformer\tiled\map_loader.js" />
     <Content Include="SS\utils\extend.js" />
     <Content Include="web.config">
       <SubType>Designer</SubType>
@@ -57,9 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
-    <Content Include="assets\tilemaps\test.json" />
-    <Content Include="assets\tilemaps\test.tmx" />
+    <Content Include="assets\maps\level1_map.json" />
+    <Content Include="assets\maps\level1.tmx" />
     <Content Include="README.md" />
+    <Content Include="assets\level\level1.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -68,8 +78,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\vendor\" />
-    <Folder Include="states\" />
+    <Folder Include="entities\item\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>

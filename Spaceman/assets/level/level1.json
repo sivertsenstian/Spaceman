@@ -1,0 +1,53 @@
+﻿{
+  "assets": {
+    "fly_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/enemy_fly.png",
+      "frame_width": 72,
+      "frame_height": 36,
+      "frames": 2
+    },
+    "slime_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/enemy_slime.png",
+      "frame_width": 50,
+      "frame_height": 25,
+      "frames": 3
+    },
+    "snail_spritesheet": {
+      "type": "spritesheet",
+      "source": "assets/images/enemy_snail.png",
+      "frame_width": 60,
+      "frame_height": 32,
+      "frames": 2
+    },
+    "level_tilemap": {
+      "type": "tilemap",
+      "source": "assets/maps/level1_map.json"
+    },
+    "map_tiles": {
+      "type": "image",
+      "source": "assets/images/tiles.png"
+    },
+    "map_items": {
+      "type": "image",
+      "source": "assets/images/items.png"
+    },
+    "player_spritesheet": {
+      "frame_height": 66,
+      "frame_width": 93,
+      "frames": 3,
+      "source": "assets/images/player_walk.png",
+      "type": "spritesheet"
+    }
+  },
+  "groups": [
+    "friendly",
+    "hostile",
+    "neutral"
+  ],
+  "map": {
+    "key": "level_tilemap",
+    "tilesets": [ "map_tiles", "map_items" ]
+  }
+}

@@ -7,3 +7,8 @@
 span {
     font-style: italic;
 }
+
+canvas {
+    display:none;
+    border: 1px solid #1B462B;
+}

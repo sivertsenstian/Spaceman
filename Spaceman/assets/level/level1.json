@@ -1,20 +1,28 @@
 ﻿{
   "assets": {
-    "fly_spritesheet": {
+
+    "player": {
+      "frame_height": 256,
+      "frame_width": 128,
+      "frames": 55,
+      "source": "assets/images/spritesheet_players.png",
+      "type": "spritesheet"
+    },
+    "fly": {
       "type": "spritesheet",
       "source": "assets/images/enemy_fly.png",
       "frame_width": 72,
       "frame_height": 36,
       "frames": 2
     },
-    "slime_spritesheet": {
+    "slime": {
       "type": "spritesheet",
       "source": "assets/images/enemy_slime.png",
       "frame_width": 50,
       "frame_height": 25,
       "frames": 3
     },
-    "snail_spritesheet": {
+    "snail": {
       "type": "spritesheet",
       "source": "assets/images/enemy_snail.png",
       "frame_width": 60,
@@ -25,29 +33,38 @@
       "type": "tilemap",
       "source": "assets/maps/level1_map.json"
     },
-    "map_tiles": {
+    "tiles_ground": {
       "type": "image",
-      "source": "assets/images/tiles.png"
+      "source": "assets/images/spritesheet_ground.png"
     },
-    "map_items": {
+    "stars": {
       "type": "image",
-      "source": "assets/images/items.png"
+      "source": "assets/backgrounds/bg.png"
     },
-    "player_spritesheet": {
-      "frame_height": 66,
-      "frame_width": 93,
-      "frames": 3,
-      "source": "assets/images/player_walk.png",
-      "type": "spritesheet"
+    "clouds": {
+      "type": "image",
+      "source": "assets/backgrounds/far.png"
+    },
+    "mountains": {
+      "type": "image",
+      "source": "assets/backgrounds/middle.png"
     }
   },
+
   "groups": [
     "friendly",
     "hostile",
     "neutral"
   ],
+
   "map": {
     "key": "level_tilemap",
-    "tilesets": [ "map_tiles", "map_items" ]
-  }
+    "tilesets": [ "tiles_ground" ]
+  },
+
+  "background_layers": [
+    "stars",
+    "clouds",
+    "mountains"
+  ]
 }

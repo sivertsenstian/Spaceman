@@ -1,9 +1,12 @@
-﻿define(['SS/platformer/state/base_state'], function (BaseState) {
+﻿define(['SS/platformer/state/base_state'], function (SSBaseState) {
   return function () { }
-  .inherits(BaseState)
+  .inherits(SSBaseState)
   .extend({
     preload: function () {
-      this.game.add.text(250, 220, 'loading...', { font: '30px Courier', fill: '#ffffff' });
+        this.game.add.text(250, 220, 'loading...', { font: '30px Courier', fill: '#ffffff' });
+
+        //Preload level-metadata
+        this.game.load.json('level1', 'assets/level/level1.json');
     },
 
     create: function () {
@@ -15,7 +18,7 @@
       this.scale.forceLandscape = true;
       this.scale.pageAlignHorizontally = true;
 
-      this.game.state.start('load');
+      this.game.state.start('menu');
     }
   });
 

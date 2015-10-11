@@ -2,10 +2,10 @@
   "assets": {
 
     "player": {
-      "frame_height": 256,
-      "frame_width": 128,
-      "frames": 55,
-      "source": "assets/images/spritesheet_players.png",
+      "frame_width": 64,
+      "frame_height": 64,
+      "frames": 8,
+      "source": "assets/images/spritesheet_player.png",
       "type": "spritesheet"
     },
     "fly": {

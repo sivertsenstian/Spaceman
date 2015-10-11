@@ -31,7 +31,7 @@
     <Content Include="assets\images\spritesheet_enemies.png" />
     <Content Include="assets\images\spritesheet_ground.png" />
     <Content Include="assets\images\spritesheet_items.png" />
-    <Content Include="assets\images\spritesheet_players.png" />
+    <Content Include="assets\images\spritesheet_player.png" />
     <Content Include="assets\images\spritesheet_tiles.png" />
     <Content Include="entities\friendly\spaceman.js" />
     <Content Include="entities\hostile\fly.js" />

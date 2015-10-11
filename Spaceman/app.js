@@ -23,10 +23,10 @@ require(
 
         //PLUGINS
         if (window.location.hash.toLowerCase().indexOf('#debug') >= 0) {
-            require(['node_modules/phaser-debug/dist/phaser-debug'], function (PhaserDebug) {
-                game.plugins.add(PhaserDebug);
-                game.debug = true;
-            });
+            //require(['node_modules/phaser-debug/dist/phaser-debug'], function (PhaserDebug) {
+            //game.plugins.add(PhaserDebug);
+            game.debugmode = true;
+            //});
         }
 
         //STATES

@@ -5,7 +5,7 @@
   "author": "Hover Craftie",
   "devDependencies": {
     "phaser": "*",
-    "phaser-debug": "*",
+    "phaser-debug": "1.1.6",
     "requirejs": "*"
   }
 }

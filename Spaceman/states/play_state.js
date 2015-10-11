@@ -12,7 +12,7 @@
       }
       .inherits(SSBaseState).extend({
           init: function () {
-              this.mapLoader = new MapLoader(this.game);
+              this.mapLoader = new MapLoader(this);
 
               //Physics
               this.game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -24,35 +24,18 @@
 
           preload: function () {
               //Load map
-              this.map = this.mapLoader.load(this.level);
+              this.map = this.mapLoader.init(this.level);
 
               //Set background
               this.background = new ParallaxBackground(this.game, this.map.widthInPixels, this.map.heightInPixels, this.level.background_layers);
           },
 
           create: function () {
+              //Load layers
+              //this.mapLoader.loadLayers();
 
-              //Layers and tiles
-              var collision_tiles;
-              this.layers = {};
-              this.map.layers.forEach(function (layer) {
-                  this.layers[layer.name] = this.map.createLayer(layer.name);
-                  //this.layers[layer.name].debug = true;
-                  if (layer.properties.collision) { // collision layer
-                      collision_tiles = [];
-                      layer.data.forEach(function (data_row) { // find tiles used in the layer
-                          data_row.forEach(function (tile) {
-                              // check if it's a valid tile index and isn't already in the list
-                              if (tile.index > 0 && collision_tiles.indexOf(tile.index) === -1) {
-                                  collision_tiles.push(tile.index);
-                              }
-                          }, this);
-                      }, this);
-                      this.map.setCollision(collision_tiles, true, layer.name);
-                  }
-              }, this);
-              // resize the world to be the size of the current layer
-              this.layers[this.map.layer.name].resizeWorld();
+              this.mapLoader.loadLayersOfType('background');
+              this.mapLoader.loadLayersOfType('terrain');
 
               //Objects
               for (var object_layer in this.map.objects) {
@@ -61,6 +44,11 @@
                       this.map.objects[object_layer].forEach(this.create_object, this);
                   }
               }
+
+              this.mapLoader.loadLayersOfType('foreground');
+
+              
+             
 
               //Stuff
               this.cursors = this.game.input.keyboard.createCursorKeys();
@@ -109,7 +97,14 @@
           },
 
           render: function () {
-              //this.game.debug.cameraInfo(this.game.camera, 32, 32);
+              if (this.game.debugmode) {
+                  this.game.time.advancedTiming = true;
+                  this.game.debug.cameraInfo(this.game.camera, 100, 32);
+                  this.game.debug.text(this.game.time.fps || '--', 2, 32, "#00ff00", '30px Arial');
+                  for (var i = 0; i < this.entities.length; i++) {
+                      this.game.debug.rectangle(this.entities[i].body, 'rgba(0,0,255,0.25)');
+                  }
+              }
           },
 
           create_object: function (object) {
@@ -124,7 +119,7 @@
                       this.game.physics.arcade.enable(this.player);
 
                       this.game.add.existing(this.player);
-                      this.player.animations.add("walking", [6, 13], 6, true);
+                      this.player.animations.add("walking", [0, 1, 2, 3, 4, 5, 6, 7], 10, true);
 
                       this.player.anchor.setTo(0.5, 0.5);
                       this.player.body.bounce.y = 0.2;

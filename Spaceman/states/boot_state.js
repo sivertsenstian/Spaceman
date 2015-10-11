@@ -4,7 +4,6 @@
   .extend({
     preload: function () {
         this.game.add.text(250, 220, 'loading...', { font: '30px Courier', fill: '#ffffff' });
-
         //Preload level-metadata
         this.game.load.json('level1', 'assets/level/level1.json');
     },

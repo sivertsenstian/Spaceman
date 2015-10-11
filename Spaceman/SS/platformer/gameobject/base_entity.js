@@ -5,8 +5,12 @@
     Phaser.Sprite.call(this, game_state.game, x, y, key, frame);
 
     for (var key in properties) {
-      if (params.hasOwnProperty(key)) {
-        this[key] = properties[key];
+      if (properties.hasOwnProperty(key)) {
+        if (!isNaN(parseInt(properties[key], 10))) {
+          this[key] = parseInt(properties[key]);
+        } else {
+          this[key] = properties[key];
+        }
       }
     }
   }

@@ -2,7 +2,9 @@
 
   return function (game_state, x, y, key, frame, properties) {
     SSMoveableEntity.call(this, game_state, x, y, key, frame, properties);
-    this.game_state.physics.arcade.enable(this);
+    this.game_state.game.add.existing(this);
+
+    this.game_state.game.physics.arcade.enable(this);
     this.animations.add("walk",
         [
             'walk/p2_walk01',
@@ -28,8 +30,6 @@
     this.game_state.game.camera.follow(this, Phaser.Camera.FOLLOW_PLATFORMER);
     this.cursors = this.game.input.keyboard.createCursorKeys();
     this.jumptimer = 0;
-
-    this.game_state.game.add.existing(this);
   }
   .inherits(SSMoveableEntity)
   .extend({
@@ -37,6 +37,10 @@
       this.game_state.game.physics.arcade.collide(this, this.game_state.layers.terrain);
       this.game_state.game.physics.arcade.collide(this, this.game_state.groups.hostile, this.hit_hostile, null, this);
       this.game_state.game.physics.arcade.collide(this, this.game_state.groups.neutral, this.hit_neutral, null, this);
+
+      if (this.bottom >= this.game_state.world.height) {
+        this.kill();
+      }
 
       //player is on the ground, so he is allowed to start a jump
       if (this.cursors.up.isDown && this.body.blocked.down) {   //player is on the ground, so he is allowed to start a jump
@@ -71,10 +75,12 @@
 
     kill: function () {
       console.log("spaceman died..");
+      this.game_state.restart();
     },
 
     hit_hostile: function () {
       console.log("COLLISION WITH HOSTILE!");
+      this.kill();
     },
 
     hit_neutral: function () {

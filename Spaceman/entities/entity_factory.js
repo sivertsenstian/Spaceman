@@ -18,50 +18,35 @@
           var entity;
           switch (object.type) {
             case "player":
-              entity = new Spaceman(this.game_state, object.x, object.y, 'player');
-              this.game_state.groups.all.add(entity);
-              this.game_state.groups.friendly.add(entity);
+              entity = new Spaceman(this.game_state, object.x, object.y, 'player', null, object.properties);
+              this.game_state.groups.all.push(entity);
+              this.game_state.groups.friendly.push(entity);
+              //this.game_state.groups.all.add(entity);
+              //this.game_state.groups.friendly.add(entity);
               break;
 
             case "slime":
-              entity = new Slime(this.game_state, object.x, object.y, 'slime');
-              this.game_state.groups.all.add(entity);
-              this.game_state.groups.hostile.add(entity);
+              entity = new Slime(this.game_state, object.x, object.y, 'slime', null, object.properties);
+              this.game_state.groups.all.push(entity);
+              this.game_state.groups.hostile.push(entity);
+              //this.game_state.groups.all.add(entity);
+              //this.game_state.groups.hostile.add(entity);
               break;
 
             case "snail":
-              var snail = new ss.platformer.gameobject.EnemyEntity(this.game, position.x, position.y, 'snail');
-              this.game.physics.arcade.enable(snail);
-
-              this.game.add.existing(snail);
-              snail.animations.add("walking", [0, 1, 0], 6, true);
-
-              snail.animations.play("walking", true);
-
-              snail.anchor.setTo(0.5, 0.5);
-              snail.body.velocity.x = -60;
-              snail.body.collideWorldBounds = true;
-
-              this.entities.push(snail);
-              this.enemies.push(snail);
+              entity = new Snail(this.game_state, object.x, object.y, 'snail', null, object.properties);
+              this.game_state.groups.all.push(entity);
+              this.game_state.groups.hostile.push(entity);
+              //this.game_state.groups.all.add(entity);
+              //this.game_state.groups.hostile.add(entity);
               break;
 
             case "fly":
-              var fly = new ss.platformer.gameobject.EnemyEntity(this.game, position.x, position.y, 'fly');
-              this.game.physics.arcade.enable(fly);
-
-              this.game.add.existing(fly);
-              fly.animations.add("walking", [0, 1, 0], 6, true);
-
-              fly.animations.play("walking", true);
-
-              fly.anchor.setTo(0.5, 0.5);
-              fly.body.velocity.x = -60;
-              fly.body.collideWorldBounds = true;
-              fly.body.allowGravity = false;
-
-              this.entities.push(fly);
-              this.enemies.push(fly);
+              entity = new Fly(this.game_state, object.x, object.y, 'fly', null, object.properties);
+              this.game_state.groups.all.push(entity);
+              this.game_state.groups.hostile.push(entity);
+              //this.game_state.groups.all.add(entity);
+              //this.game_state.groups.hostile.add(entity);
               break;
           }
         }

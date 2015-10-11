@@ -35,6 +35,10 @@
       "type": "image",
       "source": "assets/images/spritesheet_ground.png"
     },
+    "tiles_items": {
+      "type": "image",
+      "source": "assets/images/spritesheet_tiles.png"
+    },
     "stars": {
       "type": "image",
       "source": "assets/backgrounds/bg.png"
@@ -57,7 +61,7 @@
 
   "map": {
     "key": "level_tilemap",
-    "tilesets": [ "tiles_ground" ]
+    "tilesets": [ "tiles_ground", "tiles_items" ]
   },
 
   "background_layers": [

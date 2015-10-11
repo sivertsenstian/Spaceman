@@ -37,9 +37,6 @@
                       console.log(layer.name + " loaded");
                   }
               }, this);
-
-              // resize the world to be the size of the current layer
-              //layers[this.map.layer.name].resizeWorld();
               console.log("=== [" + type + "] LAYERS LOADED ===");
           },
 
@@ -49,7 +46,7 @@
                       // create layer objects
                       this.map.objects[object_layer].forEach(function (object) {
                           if (object_layer.toLowerCase() === type.toLowerCase()) {
-                              this.entityFactory(object)
+                            this.game_state.entityFactory.create(object)
                           }
                       }, this);
                   }

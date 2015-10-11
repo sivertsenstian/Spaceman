@@ -21,6 +21,7 @@
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="assets\atlas\alien_player.png" />
     <Content Include="assets\backgrounds\bg.png" />
     <Content Include="assets\backgrounds\far.png" />
     <Content Include="assets\backgrounds\menu.jpg" />
@@ -28,7 +29,6 @@
     <Content Include="assets\images\enemy_fly.png" />
     <Content Include="assets\images\enemy_slime.png" />
     <Content Include="assets\images\enemy_snail.png" />
-    <Content Include="assets\atlas\orc_atlas.png" />
     <Content Include="assets\images\spritesheet_enemies.png" />
     <Content Include="assets\images\spritesheet_ground.png" />
     <Content Include="assets\images\spritesheet_items.png" />
@@ -68,7 +68,7 @@
     <Content Include="assets\maps\level1.tmx" />
     <Content Include="README.md" />
     <Content Include="assets\level\level1.json" />
-    <Content Include="assets\atlas\orc_atlas.json" />
+    <Content Include="assets\atlas\alien_player.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

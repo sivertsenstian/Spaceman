@@ -6,6 +6,5 @@
   .inherits(SSMoveableEntity)
   .extend({
 
-  }),
-
+  })
 });

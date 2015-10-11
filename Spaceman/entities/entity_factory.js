@@ -9,55 +9,24 @@
 
   function (SSFactory, Spaceman, Slime, Snail, Fly) {
 
-    return function (game, groups) {
-      this.game = game;
-      this.groups = {
-        'entities': this.game.add.group()
-      };
-
-      for (var i = 0; i < groups.length; i++) {
-        this.groups[group] = this.game.add.group();
-      }
+    return function (game_state) {
+      this.game_state = game_state;
     }
       .inherits(SSFactory)
       .extend({
-        createEntity: function (object) {
+        create: function (object) {
+          var entity;
           switch (object.type) {
             case "player":
-              this.player = new ss.platformer.gameobject.PlayerEntity(this.game, position.x, position.y, 'player');
-              this.game.physics.arcade.enable(this.player);
-
-              this.game.add.existing(this.player);
-              this.player.animations.add("walking", [0, 1, 2, 1], 6, true);
-
-              this.player.anchor.setTo(0.5, 0.5);
-              this.player.body.bounce.y = 0.2;
-              this.player.body.drag.set(250);
-              this.player.body.maxVelocity.x = 300;
-              this.player.body.collideWorldBounds = true;
-
-              this.game.camera.follow(this.player, Phaser.Camera.FOLLOW_PLATFORMER);
-
-              this.entities.push(this.player);
-
-              //prefab = new Platformer.Player(this, position, object.properties);
+              entity = new Spaceman(this.game_state, object.x, object.y, 'player');
+              this.game_state.groups.all.add(entity);
+              this.game_state.groups.friendly.add(entity);
               break;
 
             case "slime":
-              var slime = new ss.platformer.gameobject.EnemyEntity(this.game, position.x, position.y, 'slime');
-              this.game.physics.arcade.enable(slime);
-
-              this.game.add.existing(slime);
-              slime.animations.add("walking", [0, 1, 0], 6, true);
-
-              slime.animations.play("walking", true);
-
-              slime.anchor.setTo(0.5, 0.5);
-              slime.body.velocity.x = -25;
-              slime.body.collideWorldBounds = true;
-
-              this.entities.push(slime);
-              this.enemies.push(slime);
+              entity = new Slime(this.game_state, object.x, object.y, 'slime');
+              this.game_state.groups.all.add(entity);
+              this.game_state.groups.hostile.add(entity);
               break;
 
             case "snail":

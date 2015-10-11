@@ -24,6 +24,8 @@
                           case "tilemap":
                               this.game.load.tilemap(asset_key, asset.source, null, Phaser.Tilemap.TILED_JSON);
                               break;
+                          case "atlas":
+                              this.game.load.atlas(asset_key, asset.source, asset.json, Phaser.Loader.TEXTURE_ATLAS_JSON_ARRAY);
                       }
                   }
               }

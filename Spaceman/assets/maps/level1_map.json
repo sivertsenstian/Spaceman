@@ -87,7 +87,7 @@
          "objects":[
                 {
                  "height":64,
-                 "id":26,
+                 "id":53,
                  "name":"slime",
                  "properties":
                     {
@@ -97,68 +97,8 @@
                  "type":"slime",
                  "visible":true,
                  "width":64,
-                 "x":832,
+                 "x":1088,
                  "y":832
-                }, 
-                {
-                 "height":64,
-                 "id":45,
-                 "name":"snail",
-                 "properties":
-                    {
-
-                    },
-                 "rotation":0,
-                 "type":"snail",
-                 "visible":true,
-                 "width":64,
-                 "x":1920,
-                 "y":832
-                }, 
-                {
-                 "height":64,
-                 "id":47,
-                 "name":"fly",
-                 "properties":
-                    {
-
-                    },
-                 "rotation":0,
-                 "type":"fly",
-                 "visible":true,
-                 "width":64,
-                 "x":1408,
-                 "y":704
-                }, 
-                {
-                 "height":64,
-                 "id":50,
-                 "name":"fly",
-                 "properties":
-                    {
-
-                    },
-                 "rotation":0,
-                 "type":"fly",
-                 "visible":true,
-                 "width":64,
-                 "x":1792,
-                 "y":768
-                }, 
-                {
-                 "height":64,
-                 "id":51,
-                 "name":"fly",
-                 "properties":
-                    {
-
-                    },
-                 "rotation":0,
-                 "type":"fly",
-                 "visible":true,
-                 "width":64,
-                 "x":2432,
-                 "y":640
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -189,7 +129,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":52,
+ "nextobjectid":54,
  "orientation":"orthogonal",
  "properties":
     {

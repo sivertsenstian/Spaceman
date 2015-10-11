@@ -44,11 +44,12 @@
                       this.map.objects[object_layer].forEach(this.create_object, this);
                   }
               }
+              //this.mapLoader.loadObjectsOfType('friendly');
 
               this.mapLoader.loadLayersOfType('foreground');
 
-              
-             
+
+
 
               //Stuff
               this.cursors = this.game.input.keyboard.createCursorKeys();
@@ -81,16 +82,16 @@
               if (this.cursors.left.isDown) {
                   this.player.body.velocity.x -= 15;
                   this.player.scale.x = -1;
-                  this.player.animations.play("walking");
+                  this.player.animations.play("run");
               }
               else if (this.cursors.right.isDown) {
                   this.player.body.velocity.x += 15;
                   this.player.scale.x = 1;
-                  this.player.animations.play("walking");
+                  this.player.animations.play("run");
               }
 
               if (this.player.body.velocity.x === 0) {
-                  this.player.animations.stop();
+                  this.player.animations.play("idle");
               }
 
               this.background.update(this.game.camera);
@@ -115,18 +116,44 @@
               // create object according to its type
               switch (object.type) {
                   case "player":
-                      this.player = new SSMovableEntity(this, position.x, position.y, 'player');
+                      this.player = new SSMovableEntity(this, position.x, position.y, 'orc');
                       this.game.physics.arcade.enable(this.player);
 
                       this.game.add.existing(this.player);
-                      this.player.animations.add("walking", [0, 1, 2, 3, 4, 5, 6, 7], 10, true);
+                      this.player.animations.add("run",
+                          [
+                              'run/1',
+                              'run/2',
+                              'run/3',
+                              'run/4',
+                              'run/5',
+                              'run/6',
+                              'run/7',
+                              'run/8'
+                          ],
+                          10,
+                        true);
+
+                      this.player.animations.add("idle",
+                          [
+                              'idle/1',
+                              'idle/2',
+                              'idle/3',
+                              'idle/4',
+                              'idle/3',
+                              'idle/2',
+                          ],
+                          6,
+                        true);
+
+                      this.player.animations.play("idle");
 
                       this.player.anchor.setTo(0.5, 0.5);
                       this.player.body.bounce.y = 0.2;
                       this.player.body.drag.set(250);
                       this.player.body.maxVelocity.x = 300;
                       this.player.body.collideWorldBounds = true;
-
+                      this.player.body.setSize(64, 75, 0, 0);
                       this.game.camera.follow(this.player, Phaser.Camera.FOLLOW_PLATFORMER);
 
                       this.entities.push(this.player);

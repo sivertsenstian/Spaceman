@@ -8,6 +8,11 @@
       "source": "assets/images/spritesheet_player.png",
       "type": "spritesheet"
     },
+    "orc": {
+      "type": "atlas",
+      "source": "assets/atlas/orc_atlas.png",
+      "json": "assets/atlas/orc_atlas.json"
+    },
     "fly": {
       "type": "spritesheet",
       "source": "assets/images/enemy_fly.png",

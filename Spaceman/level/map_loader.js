@@ -48,7 +48,7 @@
                   if (this.map.objects.hasOwnProperty(object_layer)) {
                       // create layer objects
                       this.map.objects[object_layer].forEach(function (object) {
-                          if (object_layer.name.toLowerCase() === type.toLowerCase()) {
+                          if (object_layer.toLowerCase() === type.toLowerCase()) {
                               this.entityFactory(object)
                           }
                       }, this);

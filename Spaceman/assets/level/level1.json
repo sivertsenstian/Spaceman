@@ -1,11 +1,33 @@
 ﻿{
   "assets": {
 
-    "player": {
+    "player_normal": {
       "type": "atlas",
       "source": "assets/atlas/alien_player.png",
       "json": "assets/atlas/alien_player.json"
     },
+    "player_small": {
+      "type": "atlas",
+      "source": "assets/atlas/alien_player_small.png",
+      "json": "assets/atlas/alien_player_small.json"
+    },
+    "hostile": {
+      "type": "atlas",
+      "source": "assets/atlas/hostile.png",
+      "json": "assets/atlas/hostile.json"
+    },
+    "neutral": {
+      "type": "atlas",
+      "source": "assets/atlas/neutral.png",
+      "json": "assets/atlas/neutral.json"
+    },
+    
+    "hud": {
+      "type": "atlas",
+      "source": "assets/atlas/hud.png",
+      "json": "assets/atlas/hud.json"
+    },
+
     "fly": {
       "type": "spritesheet",
       "source": "assets/images/enemy_fly.png",

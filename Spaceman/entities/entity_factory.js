@@ -4,50 +4,56 @@
     './friendly/spaceman',
     './hostile/slime',
     './hostile/snail',
-    './hostile/fly'
+    './hostile/fly',
+    './neutral/coin',
+    './neutral/goal',
+    './neutral/powerup/mushroom_powerup'
   ],
 
-  function (SSFactory, Spaceman, Slime, Snail, Fly) {
+  function (SSFactory, Spaceman, Slime, Snail, Fly, Coin, Goal, MushroomPowerup) {
 
     return function (game_state) {
       this.game_state = game_state;
     }
       .inherits(SSFactory)
       .extend({
-        create: function (object) {
+        create: function (object, type) {
           var entity;
+          object.properties.entityType = type;
           switch (object.type) {
+            // FRIENDLY
             case "player":
-              entity = new Spaceman(this.game_state, object.x, object.y, 'player', null, object.properties);
-              this.game_state.groups.all.push(entity);
-              this.game_state.groups.friendly.push(entity);
-              //this.game_state.groups.all.add(entity);
-              //this.game_state.groups.friendly.add(entity);
+              entity = new Spaceman(this.game_state, object.x, object.y, 'player_small', null, object.properties);
               break;
 
+            // HOSTILE
             case "slime":
-              entity = new Slime(this.game_state, object.x, object.y, 'slime', null, object.properties);
-              this.game_state.groups.all.push(entity);
-              this.game_state.groups.hostile.push(entity);
-              //this.game_state.groups.all.add(entity);
-              //this.game_state.groups.hostile.add(entity);
+              entity = new Slime(this.game_state, object.x, object.y, 'hostile', null, object.properties);
               break;
 
             case "snail":
-              entity = new Snail(this.game_state, object.x, object.y, 'snail', null, object.properties);
-              this.game_state.groups.all.push(entity);
-              this.game_state.groups.hostile.push(entity);
-              //this.game_state.groups.all.add(entity);
-              //this.game_state.groups.hostile.add(entity);
+              entity = new Snail(this.game_state, object.x, object.y, 'hostile', null, object.properties);
               break;
 
             case "fly":
-              entity = new Fly(this.game_state, object.x, object.y, 'fly', null, object.properties);
-              this.game_state.groups.all.push(entity);
-              this.game_state.groups.hostile.push(entity);
-              //this.game_state.groups.all.add(entity);
-              //this.game_state.groups.hostile.add(entity);
+              entity = new Fly(this.game_state, object.x, object.y, 'hostile', null, object.properties);
               break;
+
+            // NEUTRAL
+            case "coin":
+              entity = new Coin(this.game_state, object.x, object.y, 'neutral', null, object.properties);
+              break;
+            case "goal":
+              object.properties.width = object.width;
+              object.properties.height = object.height;
+              entity = new Goal(this.game_state, object.x, object.y, null, null, object.properties);
+              break;
+            case "mushroomPowerup":
+              entity = new MushroomPowerup(this.game_state, object.x, object.y, 'hud', null, object.properties);
+              break;
+          }
+          if (entity) {
+            this.game_state.groups[type].add(entity);
           }
         }
       })

@@ -1,0 +1,36 @@
+{"frames": {
+
+"coinBronze":
+{
+	"frame": {"x":2,"y":2,"w":33,"h":33},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":16,"y":16,"w":33,"h":33},
+	"sourceSize": {"w":33,"h":33}
+},
+"coinGold":
+{
+	"frame": {"x":37,"y":2,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":16,"y":16,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+},
+"coinSilver":
+{
+	"frame": {"x":71,"y":2,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":16,"y":16,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "neutral",
+	"format": "RGBA8888",
+	"size": {"w":105,"h":37},
+	"scale": "0.5",
+	"smartupdate": "$TexturePacker:SmartUpdate:6186aa20169832659c9bd8d4f0857d5c:9cf4f179b880fdadb0cb43a19ce5babd:5c3dfa33d378fb43eeee2bd80a0c5a2d$"
+}
+}

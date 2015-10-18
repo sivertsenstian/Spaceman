@@ -22,7 +22,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="assets\atlas\alien_player.png" />
+    <Content Include="assets\atlas\alien_player_small.png" />
+    <Content Include="assets\atlas\hostile.png" />
+    <Content Include="assets\atlas\hud.png" />
+    <Content Include="assets\atlas\neutral.png" />
     <Content Include="assets\backgrounds\bg.png" />
+    <Content Include="assets\backgrounds\blue_desert.png" />
+    <Content Include="assets\backgrounds\blue_grass.png" />
+    <Content Include="assets\backgrounds\blue_land.png" />
+    <Content Include="assets\backgrounds\blue_shroom.png" />
+    <Content Include="assets\backgrounds\colored_desert.png" />
+    <Content Include="assets\backgrounds\colored_grass.png" />
+    <Content Include="assets\backgrounds\colored_land.png" />
+    <Content Include="assets\backgrounds\colored_shroom.png" />
     <Content Include="assets\backgrounds\far.png" />
     <Content Include="assets\backgrounds\menu.jpg" />
     <Content Include="assets\backgrounds\middle.png" />
@@ -34,10 +46,14 @@
     <Content Include="assets\images\spritesheet_items.png" />
     <Content Include="assets\images\spritesheet_player.png" />
     <Content Include="assets\images\spritesheet_tiles.png" />
+    <Content Include="entities\neutral\powerup\mushroom_powerup.js" />
     <Content Include="entities\friendly\spaceman.js" />
+    <Content Include="entities\neutral\powerup\spaceman_powerup.js" />
     <Content Include="entities\hostile\fly.js" />
     <Content Include="entities\hostile\snail.js" />
     <Content Include="entities\hostile\slime.js" />
+    <Content Include="entities\neutral\goal.js" />
+    <Content Include="entities\neutral\coin.js" />
     <Content Include="level\map_loader.js" />
     <Content Include="app.css" />
     <Content Include="app.js" />
@@ -69,6 +85,10 @@
     <Content Include="README.md" />
     <Content Include="assets\level\level1.json" />
     <Content Include="assets\atlas\alien_player.json" />
+    <Content Include="assets\atlas\hostile.json" />
+    <Content Include="assets\atlas\neutral.json" />
+    <Content Include="assets\atlas\alien_player_small.json" />
+    <Content Include="assets\atlas\hud.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -76,9 +96,7 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="entities\item\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
   </PropertyGroup>

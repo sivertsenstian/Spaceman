@@ -17,7 +17,7 @@
   .inherits(Phaser.Sprite)
   .extend({
     update: function () {
-
+     
     }
   })
 

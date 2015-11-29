@@ -17,6 +17,8 @@
       'snail_shell'
       ], 2, false);
 
+    this.initialized = false;
+    this.speed = this.speed || 60;
     this.position = { x: x, y: y };
     this.SHELL_MODE = false;
     this.interactive = true;
@@ -24,23 +26,28 @@
     this.anchor.setTo(0.5, 0.5);
     this.shell_speed = this.body.maxVelocity.x = 400;
     this.body.setSize(50, 36);
-
-    this.body.velocity.x = -this.speed;
+    this.body.immovable = true; 
   }
   .inherits(SSMoveableEntity)
   .extend({
+    init: function () {
+      this.initialized = true;
+      this.body.velocity.x = -this.speed;
+    },
+    
     update: function () {
+      if(this.inCamera && !this.initialized){
+        this.init();
+      }
       this.game_state.game.physics.arcade.collide(this, this.game_state.layers.terrain, this.hit_terrain, null, this);
       this.game_state.game.physics.arcade.collide(this, this.game_state.groups.hostile, this.hit_hostile, function () { return this.SHELL_MODE && this.moving; }, this);
     },
 
     hit_terrain: function (snail) {
-      if (snail.SHELL_MODE) {
-        if (snail.body.blocked.left) {
-          snail.body.velocity.x = this.shell_speed;
-        } else if (snail.body.blocked.right) {
-          snail.body.velocity.x = -this.shell_speed;
-        }
+      if (snail.body.blocked.left) {
+        snail.body.velocity.x = snail.SHELL_MODE ? this.shell_speed : this.speed;
+      } else if (snail.body.blocked.right) {
+        snail.body.velocity.x = snail.SHELL_MODE ? -this.shell_speed : -this.speed;
       }
     },
 
@@ -51,18 +58,23 @@
       }
     },
 
-    interact: function () {
-      this.body.velocity.x = this.body.touching.left ? this.shell_speed : -this.shell_speed;
-      this.moving = true;
+    interact: function (spaceman) {
+      if(this.SHELL_MODE && this.moving){
+        spaceman.interact(spaceman, this);
+      } else {
+        this.body.velocity.x = this.body.touching.left ? this.shell_speed : -this.shell_speed;
+        this.moving = true;
+      }  
     },
 
     kill: function () {
-      if (this.alive) {
+      if (this.alive || this.moving) {
         this.alive = false;
         this.moving = false;
         this.animations.play("die", true);
-        this.body.setSize(40, 30);
         this.SHELL_MODE = true;
+        this.body.setSize(40, 30);
+        this.body.immovable = false;
         this.body.velocity.x = 0;
       }
     }

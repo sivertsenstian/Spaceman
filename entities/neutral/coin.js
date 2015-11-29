@@ -13,6 +13,7 @@
         true);
     this.animations.play('idle');
     this.anchor.setTo(.5, .5);
+    this.body.setSize(32, 32);
     this.body.allowGravity = false;
   }
   .inherits(SSStaticEntity)
@@ -28,6 +29,11 @@
         this.destroy();
         this.game_state.groups[this.entityType].remove(this);
       }
+    },
+    
+    tweenComplete: function () {
+      this.kill();
     }
+    
   })
 });

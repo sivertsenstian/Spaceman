@@ -18,15 +18,26 @@
       'fly_move'
       ], 2, false);
 
+    this.initialized = false;
+    this.speed = this.speed || 100;
     this.position = { x: x, y: y };
     this.animations.play("move", true);
     this.anchor.setTo(0.5, 0.5);
-    this.body.velocity.x = -this.speed;
+    this.body.setSize(32, 32);
     this.body.allowGravity = false;
+    this.body.immovable = true;
   }
   .inherits(SSMoveableEntity)
   .extend({
+    init: function () {
+      this.initialized = true;
+      this.body.velocity.x = -this.speed;
+    },
+    
     update: function () {
+      if(this.inCamera && !this.initialized){
+        this.init();
+      }      
       if (this.alive) {
         this.game_state.game.physics.arcade.collide(this, this.game_state.layers.terrain);
         this.game_state.game.physics.arcade.collide(this, this.game_state.groups.hostile, null, function () { return false; }, this);

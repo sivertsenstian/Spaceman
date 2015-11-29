@@ -45,7 +45,7 @@
           'hostile': this.game.add.group(),
           'neutral': this.game.add.group()
         }
-
+        
         this.mapLoader.loadObjectsOfType('neutral');
         this.mapLoader.loadObjectsOfType('friendly');
         this.mapLoader.loadObjectsOfType('hostile');
@@ -87,6 +87,8 @@
           this.game.debug.text('vel y:' + Math.round(this.groups.friendly.getFirstAlive().body.velocity.y) || '--', 2, 96, "#0000ff", '30px Arial');
 
           this.game.debug.text('health:' + Math.round(this.groups.friendly.getFirstAlive().health) || '--', 2, 128, "#0000ff", '30px Arial');
+          
+          this.game.debug.text('can jump:' + (this.groups.friendly.getFirstAlive().body.blocked.down || this.groups.friendly.getFirstAlive().body.touching.down) || '--', 2, 164, "#0000ff", '30px Arial');
         } else {
 
           //UI

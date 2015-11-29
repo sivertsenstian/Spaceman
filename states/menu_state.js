@@ -34,7 +34,7 @@
           },
 
           startGame: function () {
-              var level = this.game.cache.getJSON('level1');
+              var level = this.game.cache.getJSON('sm_1_1');
               this.game.state.add('load', new LoadState(level));
               this.state.start('load');
           }

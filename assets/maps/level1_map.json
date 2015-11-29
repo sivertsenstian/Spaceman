@@ -120,24 +120,6 @@
                 }, 
                 {
                  "height":64,
-                 "id":85,
-                 "name":"mushroomPowerup",
-                 "properties":
-                    {
-                     "name":"mushroom",
-                     "pwr_health":"2",
-                     "pwr_texture":"player_normal",
-                     "speed":"150"
-                    },
-                 "rotation":0,
-                 "type":"mushroomPowerup",
-                 "visible":true,
-                 "width":64,
-                 "x":640,
-                 "y":320
-                }, 
-                {
-                 "height":64,
                  "id":88,
                  "name":"coin",
                  "properties":
@@ -180,21 +162,6 @@
                  "width":64,
                  "x":1664,
                  "y":768
-                }, 
-                {
-                 "height":64,
-                 "id":91,
-                 "name":"coin",
-                 "properties":
-                    {
-
-                    },
-                 "rotation":0,
-                 "type":"coin",
-                 "visible":true,
-                 "width":64,
-                 "x":512,
-                 "y":640
                 }, 
                 {
                  "height":64,
@@ -420,6 +387,133 @@
                  "width":64,
                  "x":3200,
                  "y":832
+                }, 
+                {
+                 "height":64,
+                 "id":125,
+                 "name":"block_question",
+                 "properties":
+                    {
+                     "count":"10",
+                     "destructible":"false",
+                     "spawn":"coin"
+                    },
+                 "rotation":0,
+                 "type":"blockQuestion",
+                 "visible":true,
+                 "width":64,
+                 "x":256,
+                 "y":704
+                }, 
+                {
+                 "height":64,
+                 "id":134,
+                 "name":"block_question",
+                 "properties":
+                    {
+                     "count":"3",
+                     "destructible":"false",
+                     "spawn":"coin"
+                    },
+                 "rotation":0,
+                 "type":"blockQuestion",
+                 "visible":true,
+                 "width":64,
+                 "x":192,
+                 "y":704
+                }, 
+                {
+                 "height":64,
+                 "id":135,
+                 "name":"block_question",
+                 "properties":
+                    {
+                     "destructible":"false",
+                     "spawn":"mushroomPowerup"
+                    },
+                 "rotation":0,
+                 "type":"blockQuestion",
+                 "visible":true,
+                 "width":64,
+                 "x":320,
+                 "y":704
+                }, 
+                {
+                 "height":64,
+                 "id":136,
+                 "name":"blockDestructible",
+                 "properties":
+                    {
+                     "destructible":"true"
+                    },
+                 "rotation":0,
+                 "type":"blockDestructible",
+                 "visible":true,
+                 "width":64,
+                 "x":896,
+                 "y":704
+                }, 
+                {
+                 "height":64,
+                 "id":137,
+                 "name":"block_question",
+                 "properties":
+                    {
+                     "destructible":"false",
+                     "spawn":"coin"
+                    },
+                 "rotation":0,
+                 "type":"blockQuestion",
+                 "visible":true,
+                 "width":64,
+                 "x":1024,
+                 "y":704
+                }, 
+                {
+                 "height":64,
+                 "id":138,
+                 "name":"blockDestructible",
+                 "properties":
+                    {
+                     "destructible":"true"
+                    },
+                 "rotation":0,
+                 "type":"blockDestructible",
+                 "visible":true,
+                 "width":64,
+                 "x":1088,
+                 "y":704
+                }, 
+                {
+                 "height":64,
+                 "id":139,
+                 "name":"blockDestructible",
+                 "properties":
+                    {
+                     "destructible":"true"
+                    },
+                 "rotation":0,
+                 "type":"blockDestructible",
+                 "visible":true,
+                 "width":64,
+                 "x":960,
+                 "y":704
+                }, 
+                {
+                 "height":64,
+                 "id":140,
+                 "name":"block_question",
+                 "properties":
+                    {
+                     "destructible":"false",
+                     "spawn":"slime"
+                    },
+                 "rotation":0,
+                 "type":"blockQuestion",
+                 "visible":true,
+                 "width":64,
+                 "x":1216,
+                 "y":704
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -572,7 +666,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":107,
+ "nextobjectid":141,
  "orientation":"orthogonal",
  "properties":
     {

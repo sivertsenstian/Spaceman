@@ -21,35 +21,9 @@
       "source": "assets/atlas/neutral.png",
       "json": "assets/atlas/neutral.json"
     },
-    "hud": {
-      "type": "atlas",
-      "source": "assets/atlas/hud.png",
-      "json": "assets/atlas/hud.json"
-    },
-    "fly": {
-      "type": "spritesheet",
-      "source": "assets/images/enemy_fly.png",
-      "frame_width": 72,
-      "frame_height": 36,
-      "frames": 2
-    },
-    "slime": {
-      "type": "spritesheet",
-      "source": "assets/images/enemy_slime.png",
-      "frame_width": 50,
-      "frame_height": 25,
-      "frames": 3
-    },
-    "snail": {
-      "type": "spritesheet",
-      "source": "assets/images/enemy_snail.png",
-      "frame_width": 60,
-      "frame_height": 32,
-      "frames": 2
-    },
     "level_tilemap": {
       "type": "tilemap",
-      "source": "assets/maps/level1_map.json"
+      "source": "assets/maps/sm_1_1_map.json"
     },
     "tiles_ground": {
       "type": "image",

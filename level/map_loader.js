@@ -46,7 +46,7 @@
             // create layer objects
             this.map.objects[object_layer].forEach(function (object) {
               if (object_layer.toLowerCase() === type.toLowerCase()) {
-                this.game_state.entityFactory.create(object, type)
+                this.game_state.entityFactory.create(object, type);
               }
             }, this);
           }

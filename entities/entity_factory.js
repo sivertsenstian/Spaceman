@@ -7,10 +7,12 @@
     './hostile/fly',
     './neutral/coin',
     './neutral/goal',
-    './neutral/powerup/mushroom_powerup'
+    './neutral/powerup/mushroom_powerup',
+    './neutral/block/block_question',
+    './neutral/block/block_destructible'
   ],
 
-  function (SSFactory, Spaceman, Slime, Snail, Fly, Coin, Goal, MushroomPowerup) {
+  function (SSFactory, Spaceman, Slime, Snail, Fly, Coin, Goal, MushroomPowerup, BlockQuestion, BlockDestructible) {
 
     return function (game_state) {
       this.game_state = game_state;
@@ -19,7 +21,8 @@
       .extend({
         create: function (object, type) {
           var entity;
-          object.properties.entityType = type;
+          object.properties = object.properties || {};
+          object.properties.entityType = type;          
           switch (object.type) {
             // FRIENDLY
             case "player":
@@ -42,19 +45,34 @@
             // NEUTRAL
             case "coin":
               entity = new Coin(this.game_state, object.x, object.y, 'neutral', null, object.properties);
-              break;
+              break;       
+              
             case "goal":
               object.properties.width = object.width;
               object.properties.height = object.height;
               entity = new Goal(this.game_state, object.x, object.y, null, null, object.properties);
               break;
+              
             case "mushroomPowerup":
-              entity = new MushroomPowerup(this.game_state, object.x, object.y, 'hud', null, object.properties);
+              entity = new MushroomPowerup(this.game_state, object.x, object.y, 'neutral', null, object.properties);
               break;
+              
+            case "blockQuestion":    
+              object.properties.block = true;       
+              entity = new BlockQuestion(this.game_state, object.x, object.y, 'neutral', null, object.properties);
+              break;
+              
+            case "blockDestructible":    
+              object.properties.block = true;       
+              entity = new BlockDestructible(this.game_state, object.x, object.y, 'neutral', null, object.properties);
+              break;              
           }
           if (entity) {
             this.game_state.groups[type].add(entity);
+            return entity;
           }
+          
+          return null;
         }
       })
   });

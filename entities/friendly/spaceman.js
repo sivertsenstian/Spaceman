@@ -33,18 +33,21 @@
       1,
       true);
       this.default_spaceman = new SpacemanPowerup(this.game_state);
-
+      
+      this.walkSpeed = this.walkSpeed || 10;
+      this.jumpSpeed = this.jumpSpeed || 290; //575;
+      
       this.invincible = false;
       this.invincible_time = 0;
-      this.default_invincible_time = 3000;
+      this.default_invincible_time = 1500;
       this.default_spaceman.interact(this);
 
       this.anchor.setTo(0.5, 0.5);
-      this.body.bounce.y = 0.2;
+      this.body.bounce.y = 0.0;
       this.body.drag.set(250);
       this.body.maxVelocity.x = 300;
       this.body.collideWorldBounds = true;
-      this.game_state.game.camera.follow(this, Phaser.Camera.FOLLOW_PLATFORMER);
+      this.game_state.game.camera.follow(this, Phaser.Camera.FOLLOW_PLATFORMER, {x: 0, y: 700});
       this.cursors = this.game.input.keyboard.createCursorKeys();
       this.jumptimer = 0;
     }
@@ -53,24 +56,24 @@
       update: function () {
         this.game_state.game.physics.arcade.collide(this, this.game_state.layers.terrain);
         this.game_state.game.physics.arcade.collide(this, this.game_state.groups.hostile, this.hit_hostile, null, this);
-        this.game_state.game.physics.arcade.collide(this, this.game_state.groups.neutral, null, this.process_neutral, this);
+        this.game_state.game.physics.arcade.collide(this, this.game_state.groups.neutral, this.hit_block, this.process_neutral, this);
 
         if (this.bottom >= this.game_state.world.height) {
           this.kill();
         }
 
         //player is on the ground, so he is allowed to start a jump
-        if (this.cursors.up.isDown && this.body.blocked.down) {   //player is on the ground, so he is allowed to start a jump
+        if (this.cursors.up.isDown && (this.body.blocked.down || this.body.touching.down)) {   //player is on the ground, so he is allowed to start a jump
           this.animations.play("jump");
           this.jumptimer = this.game_state.game.time.elapsed;
           this.body.velocity.y = -this.jumpSpeed;
         } else if (this.cursors.up.isDown && (this.jumptimer !== 0)) { //player is no longer on the ground, but is still holding the jump key
           this.animations.play("jump");
-          if (this.jumptimer > 300) { // player has been holding jump for over 600 millliseconds, it's time to stop him
+          if (this.jumptimer > 250) { // player has been holding jump for over x millliseconds, it's time to stop him
             this.jumptimer = 0;
           } else { // player is allowed to jump higher, not yet 600 milliseconds of jumping
             this.jumptimer += this.game_state.game.time.elapsed;
-            this.body.velocity.y = -this.jumpSpeed;
+            this.body.velocity.y = -this.jumpSpeed*2;
           }
         } else if (this.jumptimer !== 0) { //reset jumptimer since the player is no longer holding the jump key
           this.jumptimer = 0;
@@ -110,19 +113,23 @@
 
       hit_hostile: function (player, hostile) {
         if (hostile.alive) {
-          if (hostile.body.touching.up) {
+          this.interact(player, hostile);
+        } else if (hostile.interactive) {
+          hostile.interact(this);
+        }
+      },
+      
+      interact: function(player, hostile) {
+        if (hostile.body.touching.up) {
             hostile.kill();
             player.body.velocity.y = -this.jumpSpeed;
-          } else if(!this.invincible) {
+        } else if(!this.invincible) {
             this.health--;
             if (this.health === 1) {
               this.default_spaceman.interact(this);
             } else if (this.health <= 0) {
               this.kill();
             }
-          }
-        } else if (hostile.interactive) {
-          hostile.interact();
         }
       },
 
@@ -131,10 +138,19 @@
           neutral.interact(player);
         }
         neutral.kill();
-        return false;
+        
+        return neutral.collision || false;
+      },
+      
+      hit_block: function (player, neutral) {
+        if (neutral.block && neutral.body.touching.down) {
+          neutral.hit(player);
+        }
+        return neutral.collision || false;
       },
 
       use_powerup: function (powerup) {
+        this.power = powerup.name;
         var changes = powerup.properties || {};
         if (changes.hasOwnProperty('pwr_health')) {
           this.health = changes.pwr_health;

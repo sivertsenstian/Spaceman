@@ -1,36 +1,114 @@
-{"frames": {
-
-"coinBronze":
 {
-	"frame": {"x":2,"y":2,"w":33,"h":33},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":16,"y":16,"w":33,"h":33},
-	"sourceSize": {"w":33,"h":33}
-},
-"coinGold":
-{
-	"frame": {"x":37,"y":2,"w":32,"h":32},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":16,"y":16,"w":32,"h":32},
-	"sourceSize": {"w":32,"h":32}
-},
-"coinSilver":
-{
-	"frame": {"x":71,"y":2,"w":32,"h":32},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":16,"y":16,"w":32,"h":32},
-	"sourceSize": {"w":32,"h":32}
-}},
-"meta": {
-	"app": "http://www.codeandweb.com/texturepacker",
-	"version": "1.0",
-	"image": "neutral",
-	"format": "RGBA8888",
-	"size": {"w":105,"h":37},
-	"scale": "0.5",
-	"smartupdate": "$TexturePacker:SmartUpdate:6186aa20169832659c9bd8d4f0857d5c:9cf4f179b880fdadb0cb43a19ce5babd:5c3dfa33d378fb43eeee2bd80a0c5a2d$"
-}
+	"frames": {
+		"blockQuestionDisabled": {
+			"frame": {
+				"x": 0,
+				"y": 0,
+				"w": 64,
+				"h": 64
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 64,
+				"h": 64
+			},
+			"sourceSize": {
+				"w": 64,
+				"h": 64
+			}
+		},
+		"blockQuestion": {
+			"frame": {
+				"x": 0,
+				"y": 65,
+				"w": 64,
+				"h": 64
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 64,
+				"h": 64
+			},
+			"sourceSize": {
+				"w": 64,
+				"h": 64
+			}
+		},
+		"coinGold": {
+			"frame": {
+				"x": 65,
+				"y": 65,
+				"w": 32,
+				"h": 32
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 32,
+				"h": 32
+			},
+			"sourceSize": {
+				"w": 32,
+				"h": 32
+			}
+		},
+		"gemBlue": {
+			"frame": {
+				"x": 65,
+				"y": 98,
+				"w": 36,
+				"h": 24
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 36,
+				"h": 24
+			},
+			"sourceSize": {
+				"w": 36,
+				"h": 24
+			}
+		},
+		"blockDestructible": {
+			"frame": {
+				"x": 65,
+				"y": 0,
+				"w": 64,
+				"h": 64
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 64,
+				"h": 64
+			},
+			"sourceSize": {
+				"w": 64,
+				"h": 64
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.leshylabs.com/apps/sstool/",
+		"version": "Leshy SpriteSheet Tool v0.8.4",
+		"image": "neutral.png",
+		"size": {
+			"w": 129,
+			"h": 129
+		},
+		"scale": 1
+	}
 }

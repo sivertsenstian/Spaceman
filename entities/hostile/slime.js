@@ -57,8 +57,10 @@
     hit_terrain: function (entity) {
         if (entity.body.blocked.left) {
           entity.body.velocity.x = this.speed;
+          this.scale.x = -1;
         } else if (entity.body.blocked.right) {
           entity.body.velocity.x = -this.speed;
+          this.scale.x = 1;
         }
     },
     

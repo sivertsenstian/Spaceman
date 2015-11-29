@@ -14,6 +14,7 @@
     update: function () {
       this.game_state.game.physics.arcade.collide(this, this.game_state.layers.terrain, this.hit_terrain, null, this);
       this.game_state.game.physics.arcade.collide(this, this.game_state.groups.friendly, null, function () { return false; }, this);
+      this.game_state.game.physics.arcade.collide(this, this.game_state.groups.neutral, null, null, this);
     },
 
     interact: function (spaceman) {

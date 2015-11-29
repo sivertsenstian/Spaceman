@@ -5,9 +5,11 @@ define(['SS/platformer/gameobject/static_entity'], function (SSStaticEntity, Coi
     this.game_state.game.add.existing(this);
 
     this.game_state.game.physics.arcade.enable(this);
+    this.blockType = this.disguise || 'blockQuestion';
+    
     this.animations.add("enabled",
         [
-            'blockQuestion'
+            this.blockType
         ],
         1,
         true);

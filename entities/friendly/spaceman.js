@@ -35,7 +35,7 @@
       this.default_spaceman = new SpacemanPowerup(this.game_state);
       
       this.walkSpeed = this.walkSpeed || 10;
-      this.jumpSpeed = this.jumpSpeed || 290; //575;
+      this.jumpSpeed = this.jumpSpeed || 290;
       
       this.invincible = false;
       this.invincible_time = 0;

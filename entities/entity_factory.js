@@ -2,17 +2,21 @@
   [
     'SS/platformer/factory',
     './friendly/spaceman',
+    './friendly/fireball',
     './hostile/slime',
     './hostile/snail',
     './hostile/fly',
     './neutral/coin',
     './neutral/goal',
     './neutral/powerup/mushroom_powerup',
+    './neutral/powerup/fireflower_powerup',
+    './neutral/powerup/oneup_powerup',
     './neutral/block/block_question',
+    './neutral/block/block_hidden',
     './neutral/block/block_destructible'
   ],
 
-  function (SSFactory, Spaceman, Slime, Snail, Fly, Coin, Goal, MushroomPowerup, BlockQuestion, BlockDestructible) {
+  function (SSFactory, Spaceman, Fireball, Slime, Snail, Fly, Coin, Goal, MushroomPowerup, FireflowerPowerup, OneUpPowerup, BlockQuestion, BlockHidden, BlockDestructible) {
 
     return function (game_state) {
       this.game_state = game_state;
@@ -27,6 +31,10 @@
             // FRIENDLY
             case "player":
               entity = new Spaceman(this.game_state, object.x, object.y, 'player_small', null, object.properties);
+              break;
+              
+            case "fireball":
+              entity = new Fireball(this.game_state, object.x, object.y, 'friendly', null, object.properties);
               break;
 
             // HOSTILE
@@ -55,6 +63,19 @@
               
             case "mushroomPowerup":
               entity = new MushroomPowerup(this.game_state, object.x, object.y, 'neutral', null, object.properties);
+              break;
+            
+            case "fireflowerPowerup":
+              entity = new FireflowerPowerup(this.game_state, object.x, object.y, 'neutral', null, object.properties);
+              break;
+              
+            case "oneupPowerup":
+              entity = new OneUpPowerup(this.game_state, object.x, object.y, 'neutral', null, object.properties);
+              break;
+
+            case "blockHidden":    
+              object.properties.block = true;       
+              entity = new BlockHidden(this.game_state, object.x, object.y, 'neutral', null, object.properties);
               break;
               
             case "blockQuestion":    

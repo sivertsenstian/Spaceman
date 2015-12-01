@@ -1,11 +1,6 @@
 ﻿define(['SS/platformer/gameobject/movable_entity'], function (SSMovableEntity) {
   return function (game_state, x, y, key, frame, properties) {
-    properties = properties || {};
-    this.name = this.name || "small";
-    this.properties = {
-      pwr_health: parseInt(properties.pwr_health, 10) || 1,
-      pwr_texture: properties.pwr_texture || 'player_small'
-    };
+    this.properties = properties || {};
     SSMovableEntity.call(this, game_state, x, y, key, frame, properties);
     this.interactive = true;
   }
@@ -18,12 +13,7 @@
     },
 
     interact: function (spaceman) {
-      //this.game_state.game.paused = true;
       spaceman.use_powerup(this);
-      //this.game_state.game.time.events.add(1000, function () {
-      //  this.game_state.game.paused = false;
-      //}, this);
-
     },
 
     kill: function () {

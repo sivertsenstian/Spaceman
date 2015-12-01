@@ -1,114 +1,93 @@
+{"frames": {
+
+"blockDestructible":
 {
-	"frames": {
-		"blockQuestionDisabled": {
-			"frame": {
-				"x": 0,
-				"y": 0,
-				"w": 64,
-				"h": 64
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 64,
-				"h": 64
-			},
-			"sourceSize": {
-				"w": 64,
-				"h": 64
-			}
-		},
-		"blockQuestion": {
-			"frame": {
-				"x": 0,
-				"y": 65,
-				"w": 64,
-				"h": 64
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 64,
-				"h": 64
-			},
-			"sourceSize": {
-				"w": 64,
-				"h": 64
-			}
-		},
-		"coinGold": {
-			"frame": {
-				"x": 65,
-				"y": 65,
-				"w": 32,
-				"h": 32
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 32,
-				"h": 32
-			},
-			"sourceSize": {
-				"w": 32,
-				"h": 32
-			}
-		},
-		"gemBlue": {
-			"frame": {
-				"x": 65,
-				"y": 98,
-				"w": 36,
-				"h": 24
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 36,
-				"h": 24
-			},
-			"sourceSize": {
-				"w": 36,
-				"h": 24
-			}
-		},
-		"blockDestructible": {
-			"frame": {
-				"x": 65,
-				"y": 0,
-				"w": 64,
-				"h": 64
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 64,
-				"h": 64
-			},
-			"sourceSize": {
-				"w": 64,
-				"h": 64
-			}
-		}
-	},
-	"meta": {
-		"app": "http://www.leshylabs.com/apps/sstool/",
-		"version": "Leshy SpriteSheet Tool v0.8.4",
-		"image": "neutral.png",
-		"size": {
-			"w": 129,
-			"h": 129
-		},
-		"scale": 1
-	}
+	"frame": {"x":0,"y":0,"w":64,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":64},
+	"sourceSize": {"w":64,"h":64},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"blockHidden":
+{
+	"frame": {"x":64,"y":0,"w":64,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":64},
+	"sourceSize": {"w":64,"h":64},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"blockQuestion":
+{
+	"frame": {"x":128,"y":0,"w":64,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":64},
+	"sourceSize": {"w":64,"h":64},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"blockQuestionDisabled":
+{
+	"frame": {"x":192,"y":0,"w":64,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":64},
+	"sourceSize": {"w":64,"h":64},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"coinGold":
+{
+	"frame": {"x":256,"y":0,"w":32,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":32},
+	"sourceSize": {"w":32,"h":32},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"gemBlue":
+{
+	"frame": {"x":288,"y":0,"w":36,"h":24},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":36,"h":24},
+	"sourceSize": {"w":36,"h":24},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"gemGreen":
+{
+	"frame": {"x":324,"y":0,"w":34,"h":24},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":24},
+	"sourceSize": {"w":34,"h":24},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"gemRed":
+{
+	"frame": {"x":358,"y":0,"w":34,"h":24},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":34,"h":24},
+	"sourceSize": {"w":34,"h":24},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"star":
+{
+	"frame": {"x":392,"y":0,"w":35,"h":34},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":34},
+	"sourceSize": {"w":35,"h":34},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "neutral",
+	"format": "RGBA8888",
+	"size": {"w":427,"h":64},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:5bb1bc97c9effdd4a5b5b7ea98f804a4:89dcd7984a10c80a8a25e8c8f0b70207:5c3dfa33d378fb43eeee2bd80a0c5a2d$"
+}
 }

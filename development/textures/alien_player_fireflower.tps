@@ -6,7 +6,7 @@
         <key>texturePackerVersion</key>
         <string>4.0.1</string>
         <key>fileName</key>
-        <string>/Users/ss/Documents/Development/Spaceman/development/textures/neutral.tps</string>
+        <string>/Users/ss/Documents/Development/Spaceman/development/textures/alien_player_fireflower.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -76,7 +76,7 @@
         <key>jpgQuality</key>
         <uint>80</uint>
         <key>pngOptimizationLevel</key>
-        <uint>0</uint>
+        <uint>1</uint>
         <key>webpQualityLevel</key>
         <uint>101</uint>
         <key>textureSubPath</key>
@@ -104,7 +104,7 @@
         <key>algorithmSettings</key>
         <struct type="AlgorithmSettings">
             <key>algorithm</key>
-            <enum type="AlgorithmSettings::AlgorithmId">Basic</enum>
+            <enum type="AlgorithmSettings::AlgorithmId">MaxRects</enum>
             <key>freeSizeMode</key>
             <enum type="AlgorithmSettings::AlgorithmFreeSizeMode">Best</enum>
             <key>sizeConstraints</key>
@@ -147,7 +147,7 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../../../../../Desktop/test/neutral.json</filename>
+                <filename></filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -162,7 +162,7 @@
             <string></string>
         </struct>
         <key>autoAliasEnabled</key>
-        <false/>
+        <true/>
         <key>trimSpriteNames</key>
         <false/>
         <key>prependSmartFolderName</key>
@@ -176,13 +176,13 @@
             <key>scaleMode</key>
             <enum type="ScaleMode">Smooth</enum>
             <key>extrude</key>
-            <uint>0</uint>
+            <uint>1</uint>
             <key>trimThreshold</key>
             <uint>1</uint>
             <key>trimMargin</key>
             <uint>1</uint>
             <key>trimMode</key>
-            <enum type="SpriteSettings::TrimMode">None</enum>
+            <enum type="SpriteSettings::TrimMode">Trim</enum>
             <key>tracerTolerance</key>
             <int>200</int>
             <key>heuristicMask</key>
@@ -191,17 +191,7 @@
             <enum type="SpriteSettings::PivotPoint">Center</enum>
         </struct>
         <key>fileList</key>
-        <array>
-            <filename>../../../../../Downloads/platformer-pack-redux-360-assets/PNG/Items/coinGold</filename>
-            <filename>../../../../../Downloads/platformer-pack-redux-360-assets/PNG/Items/gemBlue</filename>
-            <filename>../../../../../Downloads/platformer-pack-redux-360-assets/PNG/Tiles/blockQuestion</filename>
-            <filename>../../../../../Downloads/Platformer Art Complete Pack/Base pack/Tiles/blockQuestionDisabled</filename>
-            <filename>../../../../../Downloads/Platformer Art Complete Pack/Base pack/Items/gemGreen</filename>
-            <filename>../../../../../Downloads/Platformer Art Complete Pack/Base pack/Items/gemRed</filename>
-            <filename>../../../../../Downloads/Platformer Art Complete Pack/Base pack/Items/star</filename>
-            <filename>../../../../../Downloads/Platformer Art Complete Pack/Base pack/Tiles/blockDestructible</filename>
-            <filename>../../../../../Downloads/Platformer Art Complete Pack/Base pack/Tiles/blockHidden</filename>
-        </array>
+        <array/>
         <key>ignoreFileList</key>
         <array/>
         <key>replaceList</key>

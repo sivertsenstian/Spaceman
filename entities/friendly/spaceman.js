@@ -1,9 +1,9 @@
 ﻿define(
   [
     'SS/platformer/gameobject/movable_entity',
-    'entities/neutral/powerup/spaceman_powerup',
+    'entities/neutral/powerup/default_powerup',
   ],
-  function (SSMoveableEntity, SpacemanPowerup) {
+  function (SSMoveableEntity, DefaultPowerup) {
 
     return function (game_state, x, y, key, frame, properties) {
       SSMoveableEntity.call(this, game_state, x, y, key, frame, properties);
@@ -32,7 +32,7 @@
       ],
       1,
       true);
-      this.default_spaceman = new SpacemanPowerup(this.game_state);
+      this.default_spaceman = new DefaultPowerup(this.game_state);
       
       this.walkSpeed = this.walkSpeed || 10;
       this.jumpSpeed = this.jumpSpeed || 290;
@@ -50,6 +50,26 @@
       this.game_state.game.camera.follow(this, Phaser.Camera.FOLLOW_PLATFORMER, {x: 0, y: 700});
       this.cursors = this.game.input.keyboard.createCursorKeys();
       this.jumptimer = 0;
+      
+      //Attackmode - default to false
+      this.attack = false;
+      this.attackKey = this.game_state.game.input.keyboard.addKey(Phaser.Keyboard.D);
+      this.attackKey.onDown.add(function () {
+        if(this.attack){
+          console.log("PEW PEW!!");
+          var fireball = this.game_state.entityFactory.create({
+                    type: 'fireball', 
+                    x: this.x + 5, 
+                    y: this.y,
+                    properties: {
+                      direction: this.scale.x  
+                    }
+                },
+                    'friendly'
+                );
+        }
+      }, this);
+      
     }
     .inherits(SSMoveableEntity)
     .extend({
@@ -89,10 +109,6 @@
           this.scale.x = 1;
           this.animations.play("walk");
         }
-
-        //if (this.cursors.down.isDown) {
-        //  this.game_state.game.paused = !this.game_state.game.paused;
-        //}
 
         if (this.body.velocity.x === 0) {
           this.animations.play("idle");
@@ -151,17 +167,44 @@
 
       use_powerup: function (powerup) {
         this.power = powerup.name;
+        
+        if(powerup.priority !== undefined) {
+          this.power_priority = this.power_priority || 0;
+          if(powerup.priority <= this.power_priority) {
+            return;
+          }        
+          this.power_priority = powerup.priority;
+        }
+        
         var changes = powerup.properties || {};
+        //Set life to the powerups level
         if (changes.hasOwnProperty('pwr_health')) {
           this.health = changes.pwr_health;
         }
+        
+        //Add life to game-state
+        if (changes.hasOwnProperty('pwr_life')) {
+          this.game_state.lives += changes.pwr_life;
+        }
 
+        //Change texture on player according to powerup
         if (changes.hasOwnProperty('pwr_texture')) {
           this.loadTexture(changes.pwr_texture);
-          this.body.setSize(this.texture.frame.width, this.texture.frame.height);
+          this.body.setSize(this.texture.frame.width * 0.5, this.texture.frame.height);
         }
-        this.invincible = true;
-        this.invincible_time = this.default_invincible_time;
+        
+        //Toggle attack-mode according to powerup / default to falses
+        if(changes.hasOwnProperty('pwr_attack')){
+          this.attack = true;
+        } else {
+          this.attack = false;
+        }
+        
+        //Set invincible according to the powerup
+        // if(changes.hasOwnProperty('pwr_invincible')) {
+        //   this.invincible = true;
+        //   this.invincible_time = this.default_invincible_time;
+        // }
       }
 
     })

@@ -8,7 +8,7 @@ define(['SS/platformer/gameobject/static_entity'], function (SSStaticEntity, Coi
     
     this.animations.add("enabled",
         [
-            'blockQuestion'
+            'blockHidden'
         ],
         1,
         true);

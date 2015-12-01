@@ -31,7 +31,7 @@ define(['SS/platformer/gameobject/static_entity'], function (SSStaticEntity, Coi
     
     hit: function (spaceman) {  
         this.tween.onComplete.add(function() {
-            if(spaceman.power !== 'small') {
+            if(spaceman.power_priority > 0) {
                 this.kill(true);
             }
         }, this);

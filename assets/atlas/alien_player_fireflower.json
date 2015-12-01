@@ -1,0 +1,57 @@
+{"frames": {
+
+"alienPink_front":
+{
+	"frame": {"x":0,"y":0,"w":64,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":128},
+	"sourceSize": {"w":64,"h":128},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"alienPink_jump":
+{
+	"frame": {"x":0,"y":128,"w":64,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":128},
+	"sourceSize": {"w":64,"h":128},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"alienPink_stand":
+{
+	"frame": {"x":0,"y":256,"w":64,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":128},
+	"sourceSize": {"w":64,"h":128},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"alienPink_walk1":
+{
+	"frame": {"x":0,"y":384,"w":64,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":128},
+	"sourceSize": {"w":64,"h":128},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"alienPink_walk2":
+{
+	"frame": {"x":0,"y":512,"w":64,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":128},
+	"sourceSize": {"w":64,"h":128},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "alien_player_fireflower",
+	"format": "RGBA8888",
+	"size": {"w":64,"h":640},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:cdba34b145029dc01ed1e3ca057cdb8a:5d43c442f8715b3d61b4864f2c942dd8:ef8d32e5701c4d61fcf1f998ea4b37cf$"
+}
+}

@@ -13,7 +13,6 @@
     .inherits(SSBaseState).extend({
       init: function (params) {
         params = params || {};
-        console.log(params);
 
         this.coins = 0;
         this.lives = params.lives || 3;
@@ -44,17 +43,13 @@
           'friendly': this.game.add.group(),
           'hostile': this.game.add.group(),
           'neutral': this.game.add.group()
-        }
+        };
         
         this.mapLoader.loadObjectsOfType('neutral');
         this.mapLoader.loadObjectsOfType('friendly');
         this.mapLoader.loadObjectsOfType('hostile');
 
         this.mapLoader.loadLayersOfType('foreground');
-
-        this.game.input.onDown.add(function () {
-          this.game.paused = !this.game.paused;
-        }, this);
       },
 
       update: function () {

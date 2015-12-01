@@ -1,24 +1,20 @@
-﻿define(['./spaceman_powerup'], function (SpacemanPowerup) {
+define(['./spaceman_powerup'], function (SpacemanPowerup) {
 
   return function (game_state, x, y, key, frame, properties) {
-      
+
     //default properties
     properties = properties || {};
-    properties.name = "mushroom";
-    properties.priority = 1;
-    properties.pwr_health = 2;
-    properties.pwr_texture = "player_normal";
-    properties.pwr_invincible = true;
+    properties.name = "oneup";
+    properties.pwr_life = 1;
     properties.speed = 150;
-    
+
     SpacemanPowerup.call(this, game_state, x, y, key, frame, properties);
-    
     this.game_state.game.add.existing(this);
 
     this.game_state.game.physics.arcade.enable(this);
     this.animations.add("idle",
         [
-            'gemBlue'
+            'gemGreen'
         ],
         1,
         true);

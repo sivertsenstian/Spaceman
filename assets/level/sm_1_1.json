@@ -1,6 +1,11 @@
 ﻿{
   "assets": {
 
+    "player_fireflower": {
+      "type": "atlas",
+      "source": "assets/atlas/alien_player_fireflower.png",
+      "json": "assets/atlas/alien_player_fireflower.json"
+    },
     "player_normal": {
       "type": "atlas",
       "source": "assets/atlas/alien_player.png",
@@ -10,6 +15,11 @@
       "type": "atlas",
       "source": "assets/atlas/alien_player_small.png",
       "json": "assets/atlas/alien_player_small.json"
+    },
+    "friendly": {
+      "type": "atlas",
+      "source": "assets/atlas/friendly.png",
+      "json": "assets/atlas/friendly.json"
     },
     "hostile": {
       "type": "atlas",
@@ -33,6 +43,10 @@
       "type": "image",
       "source": "assets/images/spritesheet_tiles.png"
     },
+    "tiles_other": {
+      "type": "image",
+      "source": "assets/images/spritesheet_other.png"
+    },
     "stars": {
       "type": "image",
       "source": "assets/backgrounds/bg.png"
@@ -55,7 +69,7 @@
 
   "map": {
     "key": "level_tilemap",
-    "tilesets": [ "tiles_ground", "tiles_items" ]
+    "tilesets": [ "tiles_ground", "tiles_items", "tiles_other" ]
   },
 
   "background_layers": [

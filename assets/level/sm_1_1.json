@@ -31,6 +31,11 @@
       "source": "assets/atlas/neutral.png",
       "json": "assets/atlas/neutral.json"
     },
+    "ui": {
+      "type": "atlas",
+      "source": "assets/atlas/ui.png",
+      "json": "assets/atlas/ui.json"
+    },
     "level_tilemap": {
       "type": "tilemap",
       "source": "assets/maps/sm_1_1_map.json"

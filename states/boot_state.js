@@ -10,13 +10,16 @@
 
     create: function () {
       this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-      this.scale.minWidth = 1280;
-      this.scale.minHeight = 720;
-      this.scale.maxWidth = 1280;
-      this.scale.maxHeight = 720;
-      this.scale.forceLandscape = true;
-      this.scale.pageAlignHorizontally = true;
-
+      // this.scale.minWidth = 1280;
+      // this.scale.minHeight = 720;
+      // this.scale.maxWidth = 1280;
+      // this.scale.maxHeight = 720;
+      //this.scale.forceLandscape = true;
+      //this.scale.pageAlignHorizontally = true;
+      
+      //this.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
+      //this.scale.startFullScreen(false);
+      
       this.game.state.start('menu');
     }
   });

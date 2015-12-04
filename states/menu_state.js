@@ -23,6 +23,10 @@
 
               this.enterKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
               this.enterKey.onDown.add(this.startGame, this);
+              
+              this.game.time.events.add(3000, function () {
+                this.startGame();
+              }, this);
           },
 
           update: function () {

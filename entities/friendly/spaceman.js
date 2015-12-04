@@ -51,6 +51,32 @@
       this.cursors = this.game.input.keyboard.createCursorKeys();
       this.jumptimer = 0;
       
+      
+        //TEST TOUCH
+        this.game_state.game.input.addPointer();
+        // create our virtual game controller buttons
+        var buttonA = this.game.add.button(1050, 640, 'ui', null, this, "buttonA", "buttonA", "buttonA", "buttonA");
+        buttonA.fixedToCamera = true;
+        buttonA.events.onInputDown.add(function(){ this.cursors.up.isDown = true;}, this);
+        buttonA.events.onInputUp.add(function(){ this.cursors.up.isDown = false;}, this);
+        
+        var buttonB = this.game.add.button(1150, 640, 'ui', null, this, "buttonB", "buttonB", "buttonB", "buttonB");
+        buttonB.fixedToCamera = true;
+        
+        var buttonRight = this.game.add.button(160, 650, 'ui', null, this, "buttonRight", "buttonRight", "buttonRight", "buttonRight");
+        buttonRight.fixedToCamera = true;
+        //buttonRight.events.onInputOver.add(function(){right=true;});
+        //buttonRight.events.onInputOut.add(function(){right=false;});
+        buttonRight.events.onInputDown.add(function(){ this.cursors.right.isDown = true;}, this);
+        buttonRight.events.onInputUp.add(function(){ this.cursors.right.isDown = false;}, this);
+        
+        var buttonLeft = this.game.add.button(0, 650, 'ui', null, this, "buttonLeft", "buttonLeft", "buttonLeft", "buttonLeft");
+        buttonLeft.fixedToCamera = true;
+        buttonLeft.events.onInputDown.add(function(){ this.cursors.left.isDown = true;}, this);
+        buttonLeft.events.onInputUp.add(function(){ this.cursors.left.isDown = false;}, this);
+        
+        //END TEST TOUCH
+      
       //Attackmode - default to false
       this.attack = false;
       this.projectiles = 0;

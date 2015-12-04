@@ -53,16 +53,19 @@
       
       //Attackmode - default to false
       this.attack = false;
+      this.projectiles = 0;
+      this.projectile_limit = 3;
       this.attackKey = this.game_state.game.input.keyboard.addKey(Phaser.Keyboard.D);
       this.attackKey.onDown.add(function () {
-        if(this.attack){
-          console.log("PEW PEW!!");
-          var fireball = this.game_state.entityFactory.create({
+        if(this.attack && this.projectiles < this.projectile_limit){
+          this.projectiles++;
+          this.game_state.entityFactory.create({
                     type: 'fireball', 
-                    x: this.x + 5, 
+                    x: this.x + ( 5 * this.scale.x), 
                     y: this.y,
                     properties: {
-                      direction: this.scale.x  
+                      direction: this.scale.x,
+                      owner: this
                     }
                 },
                     'friendly'
@@ -191,20 +194,19 @@
         if (changes.hasOwnProperty('pwr_texture')) {
           this.loadTexture(changes.pwr_texture);
           this.body.setSize(this.texture.frame.width * 0.5, this.texture.frame.height);
+          this.y -= this.texture.frame.height/4;
         }
         
         //Toggle attack-mode according to powerup / default to falses
         if(changes.hasOwnProperty('pwr_attack')){
-          this.attack = true;
-        } else {
-          this.attack = false;
+          this.attack = changes.pwr_attack;
         }
         
         //Set invincible according to the powerup
-        // if(changes.hasOwnProperty('pwr_invincible')) {
-        //   this.invincible = true;
-        //   this.invincible_time = this.default_invincible_time;
-        // }
+        if(changes.hasOwnProperty('pwr_invincible')) {
+          this.invincible = true;
+          this.invincible_time = this.default_invincible_time;
+        }
       }
 
     })

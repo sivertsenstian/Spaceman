@@ -9,6 +9,7 @@
     properties.pwr_health = 2;
     properties.pwr_texture = "player_normal";
     properties.pwr_invincible = true;
+    properties.pwr_attack = false;
     properties.speed = 150;
     
     SpacemanPowerup.call(this, game_state, x, y, key, frame, properties);

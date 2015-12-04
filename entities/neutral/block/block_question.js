@@ -52,7 +52,7 @@ define(['SS/platformer/gameobject/static_entity'], function (SSStaticEntity, Coi
                     x: this.x + 32, 
                     y: this.y - 32
                 },
-                    'neutral'
+                    this.group || 'neutral'
                 );
                 spawned_entity.visible = false;
                 this.tween.onComplete.add(function() {

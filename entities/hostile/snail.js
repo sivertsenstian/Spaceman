@@ -46,10 +46,10 @@
     hit_terrain: function (snail) {
       if (snail.body.blocked.left) {
         snail.body.velocity.x = snail.SHELL_MODE ? this.shell_speed : this.speed;
-        this.scale = -1;
+        this.scale.x = -1;
       } else if (snail.body.blocked.right) {
         snail.body.velocity.x = snail.SHELL_MODE ? -this.shell_speed : -this.speed;
-        this.scale = 1;
+        this.scale.x = 1;
       }
     },
 

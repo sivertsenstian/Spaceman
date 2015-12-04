@@ -34,17 +34,34 @@ define(['SS/platformer/gameobject/movable_entity'], function (SSMoveableEntity) 
     update: function () {
       if(this.inCamera && !this.initialized){
         this.init();
+      }
+      
+      if(!this.inCamera && this.initialized){
+        this.kill();
       }      
+            
       if (this.alive) {
-        this.game_state.game.physics.arcade.collide(this, this.game_state.layers.terrain);
+        this.game_state.game.physics.arcade.collide(this, this.game_state.layers.terrain, this.hit_terrain);
         this.game_state.game.physics.arcade.collide(this, this.game_state.groups.neutral, null, null, this);
-        this.game_state.game.physics.arcade.collide(this, this.game_state.groups.hostile, null, null, this);
+        this.game_state.game.physics.arcade.collide(this, this.game_state.groups.hostile, this.hit_hostile, null, this);
+      }
+    },
+    
+    hit_hostile: function (fireball, hostile) {
+      hostile.kill();
+      fireball.kill();
+    },
+    
+    hit_terrain: function (fireball) {
+      if(fireball.body.touching.left || fireball.body.touching.right || fireball.body.blocked.left || fireball.body.blocked.right){
+        fireball.kill();
       }
     },
 
     kill: function () {
       if (this.alive) {
         this.alive = false;
+        this.owner.projectiles--;
         this.game_state.game.time.events.add(1000, function () {
           this.destroy();
           this.game_state.groups[this.entityType].remove(this);

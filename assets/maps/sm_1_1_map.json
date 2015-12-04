@@ -749,6 +749,37 @@
                  "width":64,
                  "x":4096,
                  "y":512
+                }, 
+                {
+                 "height":64,
+                 "id":257,
+                 "name":"block_question",
+                 "properties":
+                    {
+                     "group":"hostile",
+                     "spawn":"snail"
+                    },
+                 "rotation":0,
+                 "type":"blockQuestion",
+                 "visible":true,
+                 "width":64,
+                 "x":448,
+                 "y":576
+                }, 
+                {
+                 "height":64,
+                 "id":258,
+                 "name":"block_question",
+                 "properties":
+                    {
+                     "spawn":"oneupPowerup"
+                    },
+                 "rotation":0,
+                 "type":"blockQuestion",
+                 "visible":true,
+                 "width":64,
+                 "x":640,
+                 "y":576
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1017,6 +1048,36 @@
                  "width":64,
                  "x":3392,
                  "y":768
+                }, 
+                {
+                 "height":64,
+                 "id":261,
+                 "name":"snail",
+                 "properties":
+                    {
+                     "speed":"60"
+                    },
+                 "rotation":0,
+                 "type":"snail",
+                 "visible":true,
+                 "width":64,
+                 "x":384,
+                 "y":768
+                }, 
+                {
+                 "height":64,
+                 "id":262,
+                 "name":"snail",
+                 "properties":
+                    {
+                     "speed":"60"
+                    },
+                 "rotation":0,
+                 "type":"snail",
+                 "visible":true,
+                 "width":64,
+                 "x":896,
+                 "y":768
                 }],
          "opacity":1,
          "properties":
@@ -1051,7 +1112,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":257,
+ "nextobjectid":263,
  "orientation":"orthogonal",
  "properties":
     {
